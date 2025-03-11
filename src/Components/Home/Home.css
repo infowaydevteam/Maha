@@ -1,0 +1,213 @@
+
+/* Container with full-screen background */
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    linear-gradient(to right, rgba(0, 1, 1, 3), rgba(0, 0, 0, 0)),
+    url("./bg.png") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden; /* Prevents scrollbars when scaled */
+}
+  /* Other Pages: Override background to black */
+.other-bg {
+    background: #000;
+    
+    
+  }
+  .other-bg .home-nav {
+    background: #000;
+  }
+  
+  /* Navbar */
+  .home-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center menu items horizontally */
+    padding: 1rem 2rem;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  .fixed-wrapper {
+    width: 1366px;
+    height: 768px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: top left;
+    /* Scale down based on the viewport size while preserving aspect ratio */
+    transform: translate(-50%, -50%) scale(calc(min(100vw / 1366, 100vh / 768)));
+  }
+  .home-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .home-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-bottom: 2px solid transparent; /* For the hover underline effect */
+    transition: border-bottom 0.2s ease-in-out;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #000; /* Ensures the overall page background is black */
+  }
+  
+  /* Active state styling */
+  .home-menu li a.active {
+    border-bottom: 2px solid #f44336;
+  }
+  
+  /* Hover effect: underline with #f44336 */
+  .home-menu li a:hover {
+    border-bottom: 2px solid #f44336;
+  }
+  
+  /* Search icon on the right side */
+  .home-search {
+    position: absolute;
+    right: 2rem;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  /* Hero Section for About page */
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    max-width: 600px;
+    padding: 1rem;
+  }
+  
+  .hero-image {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+  
+  /* Underline for "WEALTHY AGAIN" with gap */
+  .hero-highlight {
+    text-decoration: underline;
+    text-decoration-color: #f44336;
+    text-underline-offset: 8px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content button {
+    background: #f44336; /* Button color */
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    text-transform: uppercase;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .hero-content button:hover {
+    background: #c0392b; /* Darken on hover */
+  }
+  
+  /* Other Pages Content */
+  .other-content {
+    padding: 20px;
+    margin-top: 80px; /* Ensure content starts below the fixed navbar */
+  }/* Existing CSS remains unchanged above … */
+
+/* Media Query for mid-zoom levels (up to 1200px) */
+@media (max-width: 1200px) {
+  /* Adjust scaling for elements with fixed dimensions */
+  .fixed-wrapper {
+    /* Multiply the calculated scale factor by 0.9 (or adjust as needed)
+       to ensure content isn’t overly shrunken or enlarged */
+    transform: translate(-50%, -50%) scale(calc(min(100vw / 1366, 100vh / 768) * 0.9));
+  }
+
+  /* Optional: Adjust the base font-size if needed */
+  html {
+    font-size: 14px;
+  }
+
+  /* Adjust the Navbar spacing */
+  .home-nav {
+    padding: 0.8rem 1rem;
+  }
+  .home-menu {
+    gap: 1rem;
+  }
+
+  /* Adjust Hero Section for better readability on smaller screens */
+  .hero-content {
+    padding: 0.5rem;
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-content button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+.home-search {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-bottom: 2px solid #f7f7f7; /* Underline effect */
+  padding-bottom: 5px;
+}
+
+.search-icon {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 8px; /* Space between icon and input */
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px;
+  width: 150px;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}

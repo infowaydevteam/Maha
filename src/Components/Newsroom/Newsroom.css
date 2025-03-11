@@ -1,0 +1,96 @@
+/* Centers the Newsroom content and positions it below the fixed navbar */
+.other-content.newsroom-content {
+    margin-top: 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+  }
+  
+  /* Newsroom header styling: uppercase, centered, and optional underline offset */
+  .other-content.newsroom-content h1 {
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #f44336;
+    text-underline-offset: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Container for all the cards */
+  .newsroom-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  /* Each card has a white border, black background, and slight corner rounding */
+  .newsroom-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 2px solid #fff; /* White border to match screenshot style */
+    border-radius: 8px;
+    text-decoration: none;
+    overflow: hidden;
+    background-color: #000; /* Black background behind brand color + orange sections */
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Subtle hover effect: lift the card a bit */
+  .newsroom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* TOP SECTION of the card (brand color) */
+  .newsroom-card-top {
+    /* Fixed height for consistent alignment across all cards */
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* BOTTOM SECTION of the card (orange background, black text) */
+  .newsroom-card-bottom {
+    background-color: #f44336;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: #f7f4f4; /* Black text in the orange area */
+  }
+  
+  /* Title in the top section */
+  .newsroom-card-top h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  /* Paragraph in the bottom section */
+  .newsroom-card-bottom p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* BRAND-SPECIFIC BACKGROUNDS for the top section */
+  .newsroom-card.prnewswire .newsroom-card-top {
+    background-color: #24365d; /* Navy-like color for PR Newswire */
+  }
+  
+  .newsroom-card.yahoo .newsroom-card-top {
+    background-color: #410093; /* Purple for Yahoo! News */
+  }
+  
+  .newsroom-card.fortune .newsroom-card-top {
+    background-color: #fff;  /* White for Fortune */
+    color: #000;             /* Switch text to black on white */
+  }
+  

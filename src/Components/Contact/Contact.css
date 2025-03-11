@@ -1,0 +1,77 @@
+/* Full-screen responsive container */
+.contact-content {
+    width: 100vw;  /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers content vertically */
+    align-items: center;  /* Centers content horizontally */
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+  
+  /* "CONTACT US" heading */
+  .contact-content h1 {
+    font-size: 4vw;  /* Scales with screen size */
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #f44336;
+    text-underline-offset: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Subtitle */
+  .contact-content .subtitle {
+    font-size: 2vw; /* Adapts to screen size */
+    margin-bottom: 1rem;
+  }
+  
+  /* Email */
+  .contact-content .email {
+    font-size: 1.8vw;
+    font-weight: 500;
+    margin-bottom: 3vh;
+  }
+  
+  /* Footer */
+  .contact-content footer {
+    font-size: 1.5vw;
+    color: #ccc;
+    position: absolute;
+    bottom: 3vh;
+  }
+  
+  /* 📱 Mobile Responsive Adjustments */
+  @media (max-width: 768px) {
+    .contact-content h1 {
+      font-size: 6vw;
+    }
+    .contact-content .subtitle {
+      font-size: 3.5vw;
+    }
+    .contact-content .email {
+      font-size: 3vw;
+    }
+    .contact-content footer {
+      font-size: 2.5vw;
+    }
+  }
+  
+  /* 🖥 TV Screens & Larger */
+  @media (min-width: 1200px) {
+    .contact-content h1 {
+      font-size: 3vw;
+    }
+    .contact-content .subtitle {
+      font-size: 1.5vw;
+    }
+    .contact-content .email {
+      font-size: 1.2vw;
+    }
+    .contact-content footer {
+      font-size: 1vw;
+    }
+  }
+  

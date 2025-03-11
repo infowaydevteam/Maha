@@ -1,0 +1,114 @@
+/* Container for the entire Contribute section */
+.contribute-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    padding: 5vh 10vw;
+    color: #fff;
+    background-color: #000;
+    gap: 2rem;
+    min-height: 60vh;
+}
+
+/* Left column (text) */
+.contribute-text {
+    flex: 1;
+    max-width: 55ch;
+    min-width: 350px;
+    text-align: left;
+}
+
+/* Header styling */
+.contribute-header {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #f44336;
+        text-underline-offset: 8px;
+    margin-bottom: 1rem;
+    line-height: 1.4; /* Increases spacing between header lines */
+}
+
+/* Paragraph styling */
+.contribute-text p {
+    font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+    line-height: 1.8; /* Increases space between lines */
+    margin-bottom: 1.5rem; /* Adds more space between paragraphs */
+}
+
+/* Right column (image) */
+.contribute-image {
+    max-width: 500px;
+    flex-shrink: 0;
+    min-width: 350px;
+}
+
+/* The image itself with flip animation */
+.contribute-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: flip 3s linear infinite;
+}
+
+/* Keyframes for the flip animation */
+@keyframes flip {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    50% {
+        transform: perspective(1000px) rotateY(180deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+/* Fix for mid-zoom levels (75%-80%) */
+@media (max-width: 1200px) {
+    .contribute-container {
+        padding: 6vh 12vw;
+    }
+
+    .contribute-header {
+        font-size: 3rem;
+        line-height: 1.5;
+    }
+
+    .contribute-text p {
+        font-size: 1.4rem;
+        line-height: 1.9;
+        margin-bottom: 1.7rem;
+    }
+
+    .contribute-image {
+        max-width: 600px;
+    }
+}
+
+/* Ensure layout remains perfect on smaller screens */
+@media (max-width: 768px) {
+    .contribute-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 5vh 5vw;
+    }
+
+    .contribute-text, .contribute-image {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .contribute-header {
+        font-size: 2.5rem;
+        line-height: 1.6;
+    }
+
+    .contribute-text p {
+        font-size: 1.3rem;
+        line-height: 2;
+    }
+}
